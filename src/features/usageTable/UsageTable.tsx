@@ -62,8 +62,9 @@ export default function UsageTable() {
     async sort({items, sortDescriptor}) {
       return {
         items: items.sort((a, b) => {
-          
+          // @ts-ignore
           let first = a[sortDescriptor.column];
+          // @ts-ignore
           let second = b[sortDescriptor.column];
           let cmp = (parseInt(first) || first) < (parseInt(second) || second) ? -1 : 1;
 
