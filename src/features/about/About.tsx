@@ -39,10 +39,11 @@ const About = () => {
                 <Divider/>
                 <CardFooter>
 
-                    <Button auto href="https://github.com/BenGregory23" color="primary" className="w-full mx-2" as={Link} showAnchorIcon={true}>
+                    <Button href="https://github.com/BenGregory23" color="primary" className="w-full mx-2" as={Link} showAnchorIcon={true}>
                         Github
                     </Button>
-                    <Button auto href="www.linkedin.com/in/ben-gregory-a04471169" color="primary" className="w-full mx-2" as={Link} showAnchorIcon={true}>
+                    
+                    <Button href="www.linkedin.com/in/ben-gregory-a04471169" color="primary" className="w-full mx-2" as={Link} showAnchorIcon={true}>
                         LinkedIn
                     </Button>
                 </CardFooter>
