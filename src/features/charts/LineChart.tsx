@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -53,10 +53,11 @@ export const data = {
 };
 
 export function LineChart() {
-
+    const [loaded, setLoaded] = useState(false);
     const usage = useAppSelector(selectUsage)
 
     useEffect(() => {
+        if(loaded) return
         
         usage.map((item) => {
           
@@ -68,7 +69,7 @@ export function LineChart() {
             console.log(data.datasets[0])
         })
 
-    })
+    },[loaded,usage])
 
   return (
   
