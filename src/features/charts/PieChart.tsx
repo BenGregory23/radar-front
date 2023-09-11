@@ -13,27 +13,17 @@ const PieChart = () => {
 
     const usage = useAppSelector(selectUsage)
     const [data, setData] = useState({
-        labels: ['Noice','Portfolio', 'Corn', 'LoLeaf', 'Other'],
+        labels: ['Noice','Portfolio', 'Corn', 'LoLeaf'],
         datasets: [
           {
             label: 'Number of visits',
-            data: [0, 0, 0, 0, 0, 0],
+            data: [0, 0, 0, 0, 0],
             borderWidth: 1,
           },
         ],
     })
 
 
-    const dataTmp = {
-        labels: ['Noice','Portfolio', 'Corn', 'LoLeaf', 'Other'],
-        datasets: [
-          {
-            label: 'Number of visits',
-            data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1,
-          },
-        ],
-    };
 
 
     useEffect(() => {
@@ -45,8 +35,9 @@ const PieChart = () => {
                 data.datasets[0].data[index] += 1
             }
             else {
-               let otherIndex = data.labels.indexOf("Other")
-                data.datasets[0].data[otherIndex] += 1
+               data.labels.push(item.source)
+               let index = data.labels.indexOf(source)
+               data.datasets[0].data[index] += 1
             }
         })        
 
