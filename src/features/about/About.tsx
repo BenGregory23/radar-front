@@ -31,21 +31,27 @@ const About = () => {
                 
                 <CardBody className="text-default-900 p-4 min-h-[200px]">
                     <p>Radar is a tool that allows me to track the number of visits on my differents projects. These project can be from various sources such as my portfolio, a mobile app, my github, etc.</p>
+                    
+                    <Spacer y={3} />
+
                     <p>
-                        <Spacer y={3} />
+                        Using Radar I can determine which projects are getting used the most and how the usage is evolving over time. These information are a good insight on what is a successfull and interesting project. 
+                    </p>
+
+                    <Spacer y={3} />
+                    <p> 
                     This tool is still in development and is not supposed to be used by anyone else than me. However, if you are interested in using it, feel free to contact me.
                     </p>
+
                 </CardBody>
                 <Divider/>
                 <CardFooter>
 
-                    <Button href="https://github.com/BenGregory23" color="primary" className="w-full mx-2" as={Link} showAnchorIcon={true}>
-                        Github
+                    <Button href="https://github.com/BenGregory23" color="success" className="w-full mx-2" as={Link} showAnchorIcon={true}>
+                        Check out the GitHub repository!
                     </Button>
                     
-                    <Button href="www.linkedin.com/in/ben-gregory-a04471169" color="primary" className="w-full mx-2" as={Link} showAnchorIcon={true}>
-                        LinkedIn
-                    </Button>
+                   
                 </CardFooter>
                 
                 </Card>
@@ -53,7 +59,9 @@ const About = () => {
                 <Card className="border-none max-w-lg shadow-medium my-1 w-full"
                 >
                     <CardHeader>
-                        <h1> How to use Radar ?</h1>
+                        <h1 className="text-lg font-medium">
+                             How to use Radar ?
+                        </h1>
                     </CardHeader>
                     <Divider/>
                     <CardBody>
