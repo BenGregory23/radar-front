@@ -10,19 +10,19 @@ import PieChart from "./features/charts/PieChart";
 import { LineChart } from "./features/charts/LineChart";
 
 
+
 function App() {
 
   
   const dispatch = useAppDispatch()
   const usage = useAppSelector(selectUsage)
+  // @ts-ignore
+ 
+
 
   useEffect(() => {
   
-    dispatch(fetchUsage()).then((unwrapResult) => {
-      
-
-
-     
+    dispatch(fetchUsage()).then((unwrapResult) => {     
       setUsage(unwrapResult.payload)
     }).then(() => {
       console.log("done")
@@ -36,13 +36,13 @@ function App() {
 
 
   return (
-      <div className="flex flex flex-col justify-center items-center">
+      <main className={` flex flex-col justify-center items-center`}>
          <Header />
-        <Tabs aria-label="Radar tabs" className="align-middle justify-center items-center">
+        <Tabs aria-label="Radar tabs" className="align-middle justify-center items-center" color="success" radius="full" defaultSelectedKey={"about"}>
           <Tab key={"usageTable"} title="Table">
           <UsageTable />
           </Tab>
-          <Tab key={"other"} title={"Radar"}>
+          <Tab key={"about"} title={"Radar"}>
           <div className="flex flex-row justify-center items-center p-4">
             <About />
             </div>
@@ -59,7 +59,7 @@ function App() {
        
        
   
-      </div>
+      </main>
      
   )
 }
