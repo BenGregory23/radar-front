@@ -24,7 +24,7 @@ const About = () => {
                     />
                     <div className="flex flex-col">
                     <p className="text-md">Radar</p>
-                    <p className="text-small text-default-500">www.example.com</p>
+                    <p className="text-small text-default-500">www.radar.bengregory.live</p>
                     </div>
                 </CardHeader>
                 <Divider/>

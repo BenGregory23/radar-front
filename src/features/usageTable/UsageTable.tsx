@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue, Spinner} from "@nextui-org/react";
+import {Table, TableHeader, TableColumn, TableBody, TableRow, Button,TableCell, getKeyValue, Spinner} from "@nextui-org/react";
 import { useAppSelector, useAppDispatch } from "../../app/hooks"
 import { selectUsage } from "./usageTableSlice"
 import {useAsyncList} from "@react-stately/data";
@@ -30,18 +30,28 @@ export default function UsageTable() {
 
   const dispatch = useAppDispatch()
   const usage = useAppSelector(selectUsage)
+  
 
 
 
   let list = useAsyncList({
     async load() {
+      console.log("loading")
       let res = usage
+      let ordered = []
+
+      for (let i = res.length; i >= 0; i--) {
+        ordered.push(res[i])
+      }
+
+    
       
 
       return {
-        items: res,
+        items: ordered,
       };
     },
+  
     async sort({items, sortDescriptor}) {
       return {
         items: items.sort((a, b) => {
@@ -61,6 +71,8 @@ export default function UsageTable() {
     },
   });
 
+  
+
 
 
   return (
@@ -68,6 +80,7 @@ export default function UsageTable() {
     sortDescriptor={list.sortDescriptor}
     
     onSortChange={list.sort}
+   
     >
     <TableHeader columns={columns}>
       {(column) => <TableColumn allowsSorting>{column.label}</TableColumn>}

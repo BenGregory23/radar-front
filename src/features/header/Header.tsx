@@ -13,12 +13,6 @@ export const Header = () => {
         // width 100% of parent
         <div className="flex flex-row justify-between items-center p-6 md:px-12 w-full ">
             <div className="flex flex-row align-middle items-center">
-           
-            
-           
-
-            
-
             <motion.ul
              className=""
              initial={{ scale: 0 }}
@@ -54,7 +48,7 @@ export const Header = () => {
                 size: "md",
                 color: "success",
                 isBordered: true,
-                src: "/public/assets/me.jpg",
+                src: "/assets/me.jpg",
             }}
             name="Ben Gregory"
            />
@@ -63,7 +57,7 @@ export const Header = () => {
       <Card shadow="none" className="max-w-[300px] border-none bg-transparent">
       <CardHeader className="justify-between">
         <div className="flex gap-3">
-          <Avatar isBordered color="success" radius="full" size="md" src="/public/assets/me.jpg" />
+          <Avatar isBordered color="success" radius="full" size="md" src="/assets/me.jpg" />
           <div className="flex flex-col items-start justify-center">
             <h4 className="text-small font-semibold leading-none text-default-600">Ben Gregory</h4>
             <h5 className="text-small tracking-tight text-default-500">@bengrgory</h5>

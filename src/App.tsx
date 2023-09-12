@@ -25,7 +25,7 @@ function App() {
     dispatch(fetchUsage()).then((unwrapResult) => {     
       setUsage(unwrapResult.payload)
     }).then(() => {
-      console.log("done")
+        
     })
 
 
